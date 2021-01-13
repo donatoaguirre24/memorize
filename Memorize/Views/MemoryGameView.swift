@@ -1,0 +1,41 @@
+//
+//  MemoryGameView.swift
+//  Memorize
+//
+//  Created by Donato Aguirre on 8/30/20.
+//  Copyright © 2020 Donato Aguirre. All rights reserved.
+//
+
+import SwiftUI
+
+struct MemoryGameView: View {
+    @ObservedObject var game: MemoryGameViewModel
+
+    var body: some View {
+        NavigationView {
+            Grid(game.cards) { card in
+                CardView(card: card, color: game.theme.color)
+                    .onTapGesture {
+                        game.choose(card)
+                    }
+            }
+            .navigationBarTitle("Memorize")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Score: \(game.score)")
+                        .foregroundColor(game.theme.color)
+                        .bold()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("New Game", action: game.resetGame)
+                }
+            }
+        }
+    }
+}
+
+struct MemoryGameView_Previews: PreviewProvider {
+    static var previews: some View {
+        MemoryGameView(game: MemoryGameViewModel())
+    }
+}

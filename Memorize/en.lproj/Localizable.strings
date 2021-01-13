@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  memorize
+
+  Created by Donato Aguirre on 10/10/20.
+  Copyright © 2020 Donato Aguirre. All rights reserved.
+*/
+
+"Memorize"  = "Memorize";
+"New Game"  = "New Game";
+"Score: %@" = "Score: %@";
