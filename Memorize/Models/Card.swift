@@ -16,7 +16,7 @@ struct Card: Identifiable {
     var content: String
 }
 
-let testData = [
+let testCards = [
     Card(isFaceUp: true, content: "A"),
     Card(isFaceUp: false, content: "B"),
     Card(isFaceUp: false, content: "C"),

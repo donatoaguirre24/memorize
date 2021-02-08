@@ -48,9 +48,9 @@ struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
 
 struct Grid_Previews: PreviewProvider {
     static var previews: some View {
-        Grid(testData) { item in
-            Text(item.content)
-                .cardify(color: Color.green, isFaceUp: item.isFaceUp, isMatched: item.isMatched)
+        Grid(testCards) { card in
+            Text(card.content)
+                .cardify(color: Color.green, isFaceUp: card.isFaceUp, isMatched: card.isMatched)
         }
     }
 }

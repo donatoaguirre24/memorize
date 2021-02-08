@@ -31,6 +31,7 @@ struct MemoryGameView: View {
                 }
             }
         }
+        .accentColor(game.theme.color)
     }
 }
 
