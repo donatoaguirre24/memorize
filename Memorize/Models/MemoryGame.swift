@@ -26,10 +26,10 @@ struct MemoryGame {
     }
 
     mutating func choose(_ card: Card) {
-        let faceupCardsIndeces = cards.indices.filter { cards[$0].isFaceUp }
+        let faceUpCardsIndexes = cards.indices.filter { cards[$0].isFaceUp }
 
         // 3rd tap: two cards are opened, update there seen status and flip them
-        if faceupCardsIndeces.count == 2 {
+        if faceUpCardsIndexes.count == 2 {
             for index in cards.indices where cards[index].isFaceUp {
                 cards[index].hasAlreadyBeenSeen = true
                 cards[index].isFaceUp = false
@@ -45,13 +45,13 @@ struct MemoryGame {
             cards[chosenIndex].isFaceUp = true
 
             // 2nd tap: choose another card -> flip the 2nd card
-            if faceupCardsIndeces.count == 1 {
-                if cards[faceupCardsIndeces[0]].content == cards[chosenIndex].content {
-                    cards[faceupCardsIndeces[0]].isMatched = true
+            if faceUpCardsIndexes.count == 1 {
+                if cards[faceUpCardsIndexes[0]].content == cards[chosenIndex].content {
+                    cards[faceUpCardsIndexes[0]].isMatched = true
                     cards[chosenIndex].isMatched = true
                     score += 2
                 } else {
-                    if cards[faceupCardsIndeces[0]].hasAlreadyBeenSeen {
+                    if cards[faceUpCardsIndexes[0]].hasAlreadyBeenSeen {
                         score -= 1
                     }
                     if cards[chosenIndex].hasAlreadyBeenSeen {

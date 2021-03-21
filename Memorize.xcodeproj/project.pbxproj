@@ -148,9 +148,9 @@
 		DB530307250708D600C1B7C1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DB3B6017251418A000DA36BF /* Theme.swift */,
-				DB0FFB4A2500966F00F11DCB /* MemoryGame.swift */,
 				7291F025259513DA003D679B /* Card.swift */,
+				DB0FFB4A2500966F00F11DCB /* MemoryGame.swift */,
+				DB3B6017251418A000DA36BF /* Theme.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,10 +158,10 @@
 		DB530308250708E400C1B7C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DB25032724FC7D2600322E5E /* MemoryGameView.swift */,
 				DB547ADB2513FE27007AD74A /* CardView.swift */,
-				72B3C0E3253CEBC5008776B1 /* Pie.swift */,
 				72CF0427259540AD00C67526 /* Grid.swift */,
+				DB25032724FC7D2600322E5E /* MemoryGameView.swift */,
+				72B3C0E3253CEBC5008776B1 /* Pie.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -512,7 +512,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
-				DEVELOPMENT_TEAM = KAD2FTT9R4;
+				DEVELOPMENT_TEAM = 39PZ336579;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Memorize/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -520,6 +520,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.donatoaguirre.memorize;
 				PRODUCT_NAME = Memorize;
 				SWIFT_VERSION = 5.0;
@@ -533,7 +534,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
-				DEVELOPMENT_TEAM = KAD2FTT9R4;
+				DEVELOPMENT_TEAM = 39PZ336579;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Memorize/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -541,6 +542,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.donatoaguirre.memorize;
 				PRODUCT_NAME = Memorize;
 				SWIFT_VERSION = 5.0;

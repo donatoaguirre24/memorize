@@ -12,7 +12,7 @@ struct CardView: View {
     let card: Card
     let color: Color
 
-    var themeColor: LinearGradient {
+    var gradient: LinearGradient {
         LinearGradient(
             gradient: Gradient(colors: [color, color.opacity(0.3)]),
             startPoint: .topLeading,
@@ -24,12 +24,12 @@ struct CardView: View {
         GeometryReader { geometry in
             ZStack {
                 Pie(startAngle: Angle.degrees(-90), endAngle: Angle.degrees(20))
-                    .fill(themeColor)
+                    .fill(gradient)
                     .opacity(0.4)
                     .padding(5)
                 Text(card.content)
             }
-            .cardify(color: themeColor, isFaceUp: card.isFaceUp, isMatched: card.isMatched)
+            .cardify(color: gradient, isFaceUp: card.isFaceUp, isMatched: card.isMatched)
             .font(.system(size: fontSize(for: geometry.size)))
         }
     }
