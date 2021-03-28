@@ -29,7 +29,7 @@ struct CardView: View {
                     .padding(5)
                 Text(card.content)
             }
-            .cardify(color: gradient, isFaceUp: card.isFaceUp, isMatched: card.isMatched)
+            .card(color: gradient, isFaceUp: card.isFaceUp, isMatched: card.isMatched)
             .font(.system(size: fontSize(for: geometry.size)))
         }
     }

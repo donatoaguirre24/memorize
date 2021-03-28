@@ -50,7 +50,7 @@ struct Grid_Previews: PreviewProvider {
     static var previews: some View {
         Grid(testCards) { card in
             Text(card.content)
-                .cardify(color: Color.green, isFaceUp: card.isFaceUp, isMatched: card.isMatched)
+                .card(color: Color.green, isFaceUp: card.isFaceUp, isMatched: card.isMatched)
         }
     }
 }

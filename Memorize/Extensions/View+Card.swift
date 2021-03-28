@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CardifyViewModifier<S>: ViewModifier where S: ShapeStyle {
+struct CardViewModifier<S>: ViewModifier where S: ShapeStyle {
     var color: S
     var isFaceUp: Bool
     var isMatched: Bool
@@ -38,7 +38,7 @@ struct CardifyViewModifier<S>: ViewModifier where S: ShapeStyle {
 }
 
 extension View {
-    func cardify<S>(color: S, isFaceUp: Bool, isMatched: Bool) -> some View where S: ShapeStyle {
-        modifier(CardifyViewModifier(color, isFaceUp, isMatched))
+    func card<S>(color: S, isFaceUp: Bool, isMatched: Bool) -> some View where S: ShapeStyle {
+        modifier(CardViewModifier(color, isFaceUp, isMatched))
     }
 }

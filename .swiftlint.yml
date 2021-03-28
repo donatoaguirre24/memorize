@@ -41,8 +41,8 @@ function_body_length:
   error: 32
 cyclomatic_complexity:
   ignores_case_statements: true
-  warning: 7
-  error: 9
+  warning: 5
+  error: 7
 type_name:
   min_length:
     warning: 3

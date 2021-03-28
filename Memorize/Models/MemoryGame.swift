@@ -13,7 +13,7 @@ struct MemoryGame {
     private(set) var score: Int
 
     init(numberOfPairs: Int, cardContentFactory: (Int) -> String) {
-        cards = [Card]()
+        cards = []
         score = 0
 
         for pairIndex in 0 ..< numberOfPairs {
@@ -25,11 +25,24 @@ struct MemoryGame {
         cards.shuffle()
     }
 
+    mutating func updateScore(firstSelectedCardIndex: Int, secondSelectedCardIndex: Int) {
+        if cards[firstSelectedCardIndex].content == cards[secondSelectedCardIndex].content {
+            score += 2
+        } else {
+            if cards[firstSelectedCardIndex].hasAlreadyBeenSeen {
+                score -= 1
+            }
+            if cards[secondSelectedCardIndex].hasAlreadyBeenSeen {
+                score -= 1
+            }
+        }
+    }
+
     mutating func choose(_ card: Card) {
-        let faceUpCardsIndexes = cards.indices.filter { cards[$0].isFaceUp }
+        let faceUpCardsIndices = cards.indices.filter { cards[$0].isFaceUp }
 
         // 3rd tap: two cards are opened, update there seen status and flip them
-        if faceUpCardsIndexes.count == 2 {
+        if faceUpCardsIndices.count == 2 {
             for index in cards.indices where cards[index].isFaceUp {
                 cards[index].hasAlreadyBeenSeen = true
                 cards[index].isFaceUp = false
@@ -45,19 +58,16 @@ struct MemoryGame {
             cards[chosenIndex].isFaceUp = true
 
             // 2nd tap: choose another card -> flip the 2nd card
-            if faceUpCardsIndexes.count == 1 {
-                if cards[faceUpCardsIndexes[0]].content == cards[chosenIndex].content {
-                    cards[faceUpCardsIndexes[0]].isMatched = true
+            if faceUpCardsIndices.count == 1 {
+                if cards[faceUpCardsIndices[0]].content == cards[chosenIndex].content {
+                    cards[faceUpCardsIndices[0]].isMatched = true
                     cards[chosenIndex].isMatched = true
-                    score += 2
-                } else {
-                    if cards[faceUpCardsIndexes[0]].hasAlreadyBeenSeen {
-                        score -= 1
-                    }
-                    if cards[chosenIndex].hasAlreadyBeenSeen {
-                        score -= 1
-                    }
                 }
+
+                updateScore(
+                    firstSelectedCardIndex: faceUpCardsIndices[0],
+                    secondSelectedCardIndex: chosenIndex
+                )
             }
         }
     }
