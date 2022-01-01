@@ -18,11 +18,9 @@ struct Pie: Shape {
 
         let center = CGPoint(x: rect.midX, y: rect.midY)
         let radius = min(rect.width, rect.height) / 2
-
-        let start = CGPoint(
-            x: center.x + radius * cos(CGFloat(startAngle.radians)),
-            y: center.y + radius * sin(CGFloat(startAngle.radians))
-        )
+        let startX = center.x + radius * cos(CGFloat(startAngle.radians))
+        let startY = center.y + radius * sin(CGFloat(startAngle.radians))
+        let start = CGPoint(x: startX, y: startY)
 
         pie.move(to: center)
         pie.addLine(to: start)

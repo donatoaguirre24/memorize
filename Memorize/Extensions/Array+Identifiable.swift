@@ -13,7 +13,6 @@ extension Array where Element: Identifiable {
         for index in 0 ..< count where self[index].id == matching.id {
             return index
         }
-
         return nil
     }
 }

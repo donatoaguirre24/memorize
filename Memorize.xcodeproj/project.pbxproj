@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7201D6A4253230160084E758 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7201D6A6253230160084E758 /* Localizable.strings */; };
+		72157D082780E989004CC38C /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 72157D072780E989004CC38C /* Collections */; };
 		721EB0AC2535F49A0085CF74 /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721EB0AB2535F49A0085CF74 /* MemorizeApp.swift */; };
 		728120E525AFA0AA00EDC6AC /* MemorizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728120E425AFA0AA00EDC6AC /* MemorizeTests.swift */; };
 		7291F026259513DA003D679B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7291F025259513DA003D679B /* Card.swift */; };
@@ -75,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72157D082780E989004CC38C /* Collections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,14 +126,14 @@
 		DB25032224FC7D2600322E5E /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				721EB0AB2535F49A0085CF74 /* MemorizeApp.swift */,
+				DB25033124FC7D2900322E5E /* Info.plist */,
 				DB0B0F73250EC62E00B13D2C /* Extensions */,
 				DB530307250708D600C1B7C1 /* Models */,
 				DB530308250708E400C1B7C1 /* Views */,
 				DB530309250708F900C1B7C1 /* ViewModels */,
-				DB25032924FC7D2900322E5E /* Assets.xcassets */,
-				DB25033124FC7D2900322E5E /* Info.plist */,
-				721EB0AB2535F49A0085CF74 /* MemorizeApp.swift */,
 				7201D6A6253230160084E758 /* Localizable.strings */,
+				DB25032924FC7D2900322E5E /* Assets.xcassets */,
 				DB25032B24FC7D2900322E5E /* Preview Content */,
 			);
 			path = Memorize;
@@ -209,6 +211,9 @@
 			dependencies = (
 			);
 			name = Memorize;
+			packageProductDependencies = (
+				72157D072780E989004CC38C /* Collections */,
+			);
 			productName = Memorize;
 			productReference = DB25032024FC7D2600322E5E /* Memorize.app */;
 			productType = "com.apple.product-type.application";
@@ -242,6 +247,9 @@
 				es,
 			);
 			mainGroup = DB25031724FC7D2600322E5E;
+			packageReferences = (
+				72157D062780E989004CC38C /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = DB25032124FC7D2600322E5E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -581,6 +589,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		72157D062780E989004CC38C /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		72157D072780E989004CC38C /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72157D062780E989004CC38C /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DB25031824FC7D2600322E5E /* Project object */;
 }

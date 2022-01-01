@@ -10,6 +10,7 @@ import XCTest
 @testable import Memorize
 
 class MemorizeTests: XCTestCase {
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -21,10 +22,10 @@ class MemorizeTests: XCTestCase {
     func testGameInitialState() throws {
         let game = MemoryGameViewModel()
 
-        XCTAssertTrue(game.cards.count > 0, "should start with a collection of cards")
+        XCTAssertTrue(game.cards.count > 0, "Should start with a collection of cards")
 
         game.cards.forEach { card in
-            XCTAssertTrue(card.isFaceUp == false, "all card should start face down")
+            XCTAssertTrue(card.isFaceUp == false, "All cards should start face down")
         }
     }
 }

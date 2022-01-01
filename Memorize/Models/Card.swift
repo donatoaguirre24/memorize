@@ -16,9 +16,11 @@ struct Card: Identifiable {
     var content: String
 }
 
-let testCards = [
-    Card(isFaceUp: true, content: "A"),
-    Card(isFaceUp: false, content: "B"),
-    Card(isFaceUp: false, content: "C"),
-    Card(isFaceUp: true, content: "D"),
-]
+extension Card {
+    static let testCards = [
+        Card(isFaceUp: true, content: "A"),
+        Card(isFaceUp: false, content: "B"),
+        Card(isFaceUp: false, content: "C"),
+        Card(isFaceUp: true, content: "D"),
+    ]
+}

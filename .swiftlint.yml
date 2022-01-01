@@ -16,7 +16,7 @@ opt_in_rules:
   - sorted_imports
   - yoda_condition
 included:
-  - memorize
+  - Memorize
 excluded:
   - Pods
   - init.swift

@@ -22,18 +22,18 @@ struct CardViewModifier<S>: ViewModifier where S: ShapeStyle {
     func body(content: Content) -> some View {
         ZStack {
             if isFaceUp {
-                RoundedRectangle(cornerRadius: borderRadius).fill(Color.white)
-                RoundedRectangle(cornerRadius: borderRadius).stroke(color, lineWidth: borderWidth)
+                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
+                RoundedRectangle(cornerRadius: cornerRadius).stroke(color, lineWidth: borderWidth)
                 content
             } else if !isMatched {
-                RoundedRectangle(cornerRadius: borderRadius).fill(color)
+                RoundedRectangle(cornerRadius: cornerRadius).fill(color)
             }
         }
     }
 
     // MARK: - Drawing Constants
 
-    private let borderRadius: CGFloat = 10
+    private let cornerRadius: CGFloat = 10
     private let borderWidth: CGFloat = 3
 }
 
