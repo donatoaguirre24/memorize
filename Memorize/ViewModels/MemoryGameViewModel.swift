@@ -36,7 +36,7 @@ final class MemoryGameViewModel: ObservableObject {
 private extension MemoryGameViewModel {
     static func createMemoryGame(with theme: Theme) -> MemoryGame {
         let emojis = theme.emojis.shuffled()
-        let numberOfPairs = Int.random(in: 2 ... emojis.count)
+        let numberOfPairs = Int.random(in: 4 ... emojis.count)
         return MemoryGame(numberOfPairs: numberOfPairs) { emojis[$0] }
     }
 }
