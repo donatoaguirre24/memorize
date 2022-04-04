@@ -16,11 +16,15 @@ struct Card: Identifiable {
     var content: String
 }
 
-extension Card {
-    static let testCards = [
-        Card(isFaceUp: true, content: "A"),
-        Card(isFaceUp: false, content: "B"),
-        Card(isFaceUp: false, content: "C"),
-        Card(isFaceUp: true, content: "D"),
-    ]
+extension Card: Equatable {
+    static func ==(lhs: Card, rhs: Card) -> Bool {
+        lhs.id == rhs.id
+    }
 }
+
+let testCards = [
+    Card(isFaceUp: true, content: "A"),
+    Card(isFaceUp: false, content: "B"),
+    Card(isFaceUp: false, content: "C"),
+    Card(isFaceUp: true, content: "D"),
+]
