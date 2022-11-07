@@ -6,6 +6,6 @@
   Copyright © 2020 Donato Aguirre. All rights reserved.
 */
 
-"Memorize"  = "Memoria";
-"New Game"  = "Nuevo Juego";
-"Score: %@" = "Puntaje: %@";
+"memorize" = "Memoria";
+"new_game" = "Nuevo Juego";
+"score %@" = "Puntaje: %@";

@@ -19,15 +19,15 @@ struct MemoryGameView: View {
                         game.choose(card)
                     }
             }
-            .navigationBarTitle("Memorize")
+            .navigationBarTitle("memorize")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Text("Score: \(game.score)")
+                    Text("score \(game.score)")
                         .foregroundColor(game.theme.color)
                         .bold()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("New Game", action: game.resetGame)
+                    Button("new_game", action: game.resetGame)
                 }
             }
         }

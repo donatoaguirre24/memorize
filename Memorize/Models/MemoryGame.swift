@@ -9,15 +9,11 @@
 import Foundation
 
 struct MemoryGame {
-
-    private let pointsPerMatch = 2
-    private let pointsPerError = -1
-
     private(set) var cards: [Card] = []
     private(set) var score = 0
 
     init(numberOfPairs: Int, cardContentFactory: (Int) -> String) {
-        for pairIndex in 0..<numberOfPairs {
+        (0..<numberOfPairs).forEach { pairIndex in
             let card = Card(content: cardContentFactory(pairIndex))
             cards += [card, card]
         }
@@ -36,8 +32,7 @@ struct MemoryGame {
         }
 
         guard let chosenCardIndex = cards.firstIndex(matching: card),
-              !cards[chosenCardIndex].isFaceUp,
-              !cards[chosenCardIndex].isMatched
+              !cards[chosenCardIndex].isFaceUp && !cards[chosenCardIndex].isMatched
         else {
             return
         }
@@ -47,18 +42,21 @@ struct MemoryGame {
 
         // 2nd tap: choose another card -> flip the 2nd card
         if faceUpCardsIndices.count == 1 {
-            let firstSelectionIndex = faceUpCardsIndices[0]
+            let faceUpCardIndex = faceUpCardsIndices[0]
 
-            if cards[firstSelectionIndex] == cards[chosenCardIndex] {
-                cards[firstSelectionIndex].isMatched = true
+            if cards[faceUpCardIndex] == cards[chosenCardIndex] {
+                cards[faceUpCardIndex].isMatched = true
                 cards[chosenCardIndex].isMatched = true
             }
 
-            updateScore(firstCard: cards[firstSelectionIndex], secondCard: cards[chosenCardIndex])
+            updateScore(firstCard: cards[faceUpCardIndex], secondCard: cards[chosenCardIndex])
         }
     }
 
     private mutating func updateScore(firstCard: Card, secondCard: Card) {
+        let pointsPerMatch = 2
+        let pointsPerError = -1
+
         if firstCard == secondCard {
             score += pointsPerMatch
         } else {

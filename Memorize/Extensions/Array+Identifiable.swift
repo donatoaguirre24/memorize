@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension Array where Element: Identifiable {
+extension Array where Element: Equatable {
     func firstIndex(matching: Element) -> Int? {
-        for index in 0..<count where self[index].id == matching.id {
+        for index in 0..<count where self[index] == matching {
             return index
         }
         return nil

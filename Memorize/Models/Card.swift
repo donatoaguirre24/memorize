@@ -9,7 +9,7 @@
 import Foundation
 
 struct Card: Identifiable {
-    var id = UUID()
+    let id = UUID()
     var hasAlreadyBeenSeen = false
     var isFaceUp = false
     var isMatched = false

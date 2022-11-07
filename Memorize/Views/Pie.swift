@@ -14,14 +14,13 @@ struct Pie: Shape {
     var clockwise = true
 
     func path(in rect: CGRect) -> Path {
-        var pie = Path()
-
         let center = CGPoint(x: rect.midX, y: rect.midY)
         let radius = min(rect.width, rect.height) / 2
         let startX = center.x + radius * cos(CGFloat(startAngle.radians))
         let startY = center.y + radius * sin(CGFloat(startAngle.radians))
         let start = CGPoint(x: startX, y: startY)
 
+        var pie = Path()
         pie.move(to: center)
         pie.addLine(to: start)
         pie.addArc(
@@ -32,7 +31,6 @@ struct Pie: Shape {
             clockwise: clockwise
         )
         pie.addLine(to: center)
-
         return pie
     }
 }

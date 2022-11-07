@@ -22,7 +22,7 @@ class MemorizeTests: XCTestCase {
     func testGameInitialState() throws {
         let game = MemoryGameViewModel()
 
-        XCTAssertTrue(game.cards.count > 0, "Should start with a collection of cards")
+        XCTAssertTrue(!game.cards.isEmpty, "Should start with a collection of cards")
 
         game.cards.forEach { card in
             XCTAssertTrue(card.isFaceUp == false, "All cards should start face down")
